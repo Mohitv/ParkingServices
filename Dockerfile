@@ -1,7 +1,6 @@
 # escape=`
-
-FROM microsoft/windowsservercore:latest
-
+FROM microsoft/windowsservercore:10.0.14393.693
+ENV WINDOWS_IMAGE_VERSION=10.0.14393.693
 
 # copy nodejs to nanoserver
 RUN mkdir "C:\nodejs"
