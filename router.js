@@ -1,4 +1,4 @@
-const Authentication = require('./controllers/authentication');
+
 const GMPParking = require('./controllers/gmp_parking');
 const MockParking = require('./controllers/mock_parking');
 const passportService = require('./services/passport');
@@ -12,8 +12,7 @@ module.exports = function(app) {
   app.get('/', requireAuth, function(req, res) {
     res.send({ message: 'Super secret code is ABC123' });
   });
-  app.post('/signin', requireSignin, Authentication.signin);
-  app.post('/signup', Authentication.signup);
+  
   app.get('/getMeNearByParkings', MockParking.getMeNearByParkings);
   app.get('/getMeParkingSlot', MockParking.getMeParkingSlot);
   app.post('/updateMyBooking', MockParking.updateMyBooking);
