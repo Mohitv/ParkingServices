@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const mongoose = require('mongoose');
 const Parking = require('../models/parking');
 const User = require('../models/user');
@@ -27,12 +28,11 @@ exports.updateMyBooking = function(req, res, next) {
                               if (err) { return next(err);}
                               //check if booking is available and update
                               Parking.findOne({parkingSlotId:req.body.booking[0].parkingSlotId,
-                                              "parkingSubSlots.parkingSubSlotId":req.body.booking[0].parkingSubSlotId}
-                                              ,function(err, parking) {
+                                              "parkingSubSlots.parkingSubSlotId":req.body.booking[0].parkingSubSlotId},
+                                              function(err, parking) {
                                                       if (err) { return next(err);}
                                                         var parkingSubSlot = search(req.body.booking[0].parkingSubSlotId,parking.parkingSubSlots);
-                                                        console.log(parkingSubSlot);
-                                                        console.log(parkingSubSlot.Availability);
+
                                                         if (parseInt(parkingSubSlot.Availability) > 0)
                                                         {
                                                                availableParking = parseInt(parkingSubSlot.Availability) -1;

@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "node_modules/.bin/mocha --require test/bootstrap/node test/*.test.js",
     "testmocha": "mocha --timeout 10000"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "test"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -42,6 +47,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "pre-commit": "^1.2.2"
   }
 }
