@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get('/', requireAuth, function(req, res) {
     res.status(123).send({ message: 'Super secret code is ABC123' });
   });
-
+  app.get('/getMeUpgradeMessage', MockParking.getMeUpgradeMessage);
   app.get('/getMeNearByParkings', MockParking.getMeNearByParkings);
   app.get('/getMeParkingSlot', MockParking.getMeParkingSlot);
   app.post('/updateMyBooking', MockParking.updateMyBooking);

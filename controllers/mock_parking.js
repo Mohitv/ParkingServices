@@ -115,3 +115,7 @@ function search(nameKey, myArray){
         }
     }
 }
+
+exports.getMeUpgradeMessage=function(req, res, next) {
+  res.status(200).send({ success: "Upgrade done" });
+};
