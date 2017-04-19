@@ -1,0 +1,8 @@
+# escape=`
+FROM alpha27/parking_ms_nano
+
+WORKDIR /App
+
+EXPOSE 8080
+
+CMD [ "npm.cmd", "run test" ]
