@@ -1,0 +1,8 @@
+{
+  // Customer module configs
+  "Customer": {
+    "dbConfig": {
+      "host": "mongodb://localhost:auth/auth"
+    }
+  }
+}

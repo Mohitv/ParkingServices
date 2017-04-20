@@ -8,16 +8,14 @@ const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const config = require('config');
 
-//local MongoDB connection
-//mongoose.connect('mongodb://localhost:auth/auth');
-//db.ensureIndex({ geoLocation: '2dsphere' });
-//connection to Document DB in Azure - now instance is removed
-//mongoose.connect('mongodb://dbdellemc:o8jIgSQFSNClXGqDI6eYTV1OxN3doMPTLsvmQ80wR2AImshcVoC9B5QdHktbDMbB35DmGOyCeYPHzQoVS1CobQ==@dbdellemc.documents.azure.com:10250/auth/?ssl=true');
-//connection to MLabs database collections
 
-mongoose.connect('mongodb://admin:admin@ds056979.mlab.com:56979/dbdellemc');
+var dbConfig = config.get('Customer.dbConfig');
+
+mongoose.connect(dbConfig.host);
 console.log('connected');
+
 // App Setup
 app.use(morgan('combined'));
 app.use(cors());
