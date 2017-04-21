@@ -12,7 +12,7 @@ const config = require('config');
 
 
 var dbConfig = config.get('Customer.dbConfig');
-
+console.log(dbConfig.host);
 mongoose.connect(dbConfig.host);
 console.log('connected');
 

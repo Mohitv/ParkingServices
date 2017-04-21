@@ -5,5 +5,4 @@ WORKDIR /App
 
 EXPOSE 8080
 
-CMD [ "npm.cmd", "SET NODE_ENV=stage" ]
 CMD [ "npm.cmd", "run test" ]

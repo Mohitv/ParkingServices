@@ -1,0 +1,8 @@
+{
+  // Customer module configs
+  "Customer": {
+    "dbConfig": {
+      "host": "mongodb://admin:admin@ds056979.mlab.com:56979/dbdellemc"
+    }
+  }
+}

@@ -22,5 +22,5 @@ RUN npm install
 COPY . /App
 
 EXPOSE 8080
-CMD [ "npm.cmd", "SET NODE_ENV=stage" ]
-CMD [ "npm.cmd", "run dev" ]
+
+CMD [ "npm.cmd", "set NODE_ENV=stage & npm.cmd run dev" ]
