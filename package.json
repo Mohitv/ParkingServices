@@ -43,7 +43,7 @@
     "express"
   ],
   "engines": {
-    "node": "7.9.0"
+    "node": "6.9.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
