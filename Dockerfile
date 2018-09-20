@@ -1,5 +1,5 @@
 # escape=`
-FROM microsoft/nanoserver
+FROM microsoft/nanoserver:ltsc2016
 
 # copy nodejs to nanoserver
 RUN mkdir "C:\nodejs"
