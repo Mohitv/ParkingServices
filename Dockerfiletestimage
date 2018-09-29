@@ -5,4 +5,4 @@ WORKDIR /App
 
 EXPOSE 8080
 
-CMD [ "npm.cmd", "run test" ]
+CMD [ "npm", "run test" ]
