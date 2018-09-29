@@ -2,7 +2,7 @@
   // Customer module configs
   "Customer": {
     "dbConfig": {
-      "host": "mongodb://10.207.80.117:27017/dbdellemc"
+      "host": "mongodb://admin:admin@ds056979.mlab.com:56979/dbdellemc"
     }
   }
 }
