@@ -1,26 +1,15 @@
 # escape=`
-FROM microsoft/windowsservercore
+FROM node:8
 
-# copy nodejs to nanoserver
-RUN mkdir "C:\nodejs"
-ADD ./nodejs/nodejs /nodejs
+WORKDIR /app
 
-# set path
-RUN powershell.exe -NoProfile -ExecutionPolicy Bypass -Command `
-    $oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).Path; `
-    $newpath = 'C:\nodejs;'+$oldpath; `
-    Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newpath;
+COPY package.json /app
 
-RUN mkdir "C:\App"
-WORKDIR /App
-
-# Install app dependencies
-COPY package.json /App
 RUN npm install
 
 # Bundle app source
-COPY . /App
+COPY . /app
 
 EXPOSE 8080
 
-CMD [ "npm.cmd", "set NODE_ENV=stage & npm.cmd run dev" ]
+CMD [ "npm", "set NODE_ENV=stage & npm run dev" ]
