@@ -1,7 +1,7 @@
 # escape=`
 FROM alpha27/parking_ms_nano
 
-WORKDIR /App
+WORKDIR /app
 
 EXPOSE 8080
 
