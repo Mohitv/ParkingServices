@@ -1,5 +1,5 @@
 # escape=`
-FROM microsoft/nanoserver
+FROM node:8
 
 COPY package.json /app
 
