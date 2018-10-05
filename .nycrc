@@ -1,0 +1,7 @@
+{
+  "include": [
+    "controllers/gmp_parking.js"
+  ],
+  "cache": true,
+  "all": true
+}
